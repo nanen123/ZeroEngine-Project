@@ -2,7 +2,9 @@
 #include "Player.h"
 
 
-Player::Player() : velX(0), velY(0), Center(640, 360), isOut(false)
+Player::Player() : velX(0), velY(0),
+				   Center(640, 360),
+				   isOut(false), isCol(false)
 {
 	SetSprite();
 	this->SetPos(640, 360);
@@ -38,8 +40,8 @@ void Player::CheckDistance()
 
 	if (isOut)
 	{
-		velX *= -1;
-		velY *= -1;
+		velX *= -2;
+		velY *= -2;
 	}
 }
 

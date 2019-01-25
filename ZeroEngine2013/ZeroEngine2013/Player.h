@@ -12,7 +12,9 @@ class Player :
 public:
 	float velX;
 	float velY;
+
 	bool isOut;
+	bool isCol;
 
 	ZeroVec Center;
 
