@@ -5,7 +5,7 @@
 #include "ZeroCameraManager.h"
 #include <list>
 #include "Player.h"
-#include "Bullet.h"
+#include "BulletManager.h"
 
 class GameScene :
 	public ZeroIScene

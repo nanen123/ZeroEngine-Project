@@ -17,13 +17,16 @@ void GameScene::Update(float eTime)
 {
 	ZeroIScene::Update(eTime);
 	testBullet->Update(eTime);
-	player->Update(eTime);
-	
+	BMGR->Update(eTime);
+	if (!player->isCol)
+		player->Update(eTime);
 }
 
 void GameScene::Render()
 {
 	ZeroIScene::Render();
 	testBullet->Render();
-	player->Render();
+	BMGR->Render();
+	if (!player->isCol)
+		player->Render();
 }
