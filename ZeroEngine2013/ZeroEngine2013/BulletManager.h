@@ -9,6 +9,7 @@ class BulletManager :
 	public ZeroIScene
 {
 public:
+	float Time;
 	static BulletManager* instance();
 
 	BulletManager();

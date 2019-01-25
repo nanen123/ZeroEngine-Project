@@ -2,7 +2,7 @@
 #include "BulletManager.h"
 
 
-BulletManager::BulletManager()
+BulletManager::BulletManager() : Time(0)
 {
 }
 
@@ -20,10 +20,12 @@ BulletManager* BulletManager::instance()
 void BulletManager::Update(float eTime)
 {
 	ZeroIScene::Update(eTime);
+	Time += eTime;
 	for (auto iter = BulletList.begin(); iter != BulletList.end(); iter++)
 	{
 		(*iter)->Update(eTime);
 	}
+	SpawnBullet();
 }
 
 void BulletManager::Render()
@@ -37,5 +39,9 @@ void BulletManager::Render()
 
 void BulletManager::SpawnBullet()
 {
-	BulletList.push_back(new Bullet());
+	if (Time >= 1)
+	{
+		BulletList.push_back(new Bullet());
+		Time -= 1;
+	}
 }
