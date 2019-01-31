@@ -4,9 +4,10 @@
 
 GameScene::GameScene()
 {
+	Stage = new ZeroSprite("Resources/img/Circle.png");
+	Stage->SetPos(340,60);
 	ZeroCameraMgr->SetCameraOn();
 	ZeroCameraMgr->SetScreen(1280, 720);
-	testBullet = new Bullet();
 }
 
 GameScene::~GameScene()
@@ -16,17 +17,18 @@ GameScene::~GameScene()
 void GameScene::Update(float eTime)
 {
 	ZeroIScene::Update(eTime);
-	testBullet->Update(eTime);
 	BMGR->Update(eTime);
-	if (!player->isCol)
-		player->Update(eTime);
+	player->Update(eTime);
+	BombMGR->Update(eTime);
+	//if (player->isCol)
+		//ZeroSceneMgr->ChangeScene(new MainScene());
 }
 
 void GameScene::Render()
 {
 	ZeroIScene::Render();
-	testBullet->Render();
+	Stage->Render();
 	BMGR->Render();
-	if (!player->isCol)
-		player->Render();
+	player->Render();
+	BombMGR->Render();
 }

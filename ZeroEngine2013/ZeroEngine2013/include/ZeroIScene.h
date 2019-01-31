@@ -2,6 +2,7 @@
 
 #include "ZeroRect.h"
 #include "ZeroVec.h"
+#include <iostream>
 
 using namespace std;
 

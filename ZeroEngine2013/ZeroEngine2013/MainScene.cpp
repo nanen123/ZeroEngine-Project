@@ -28,6 +28,7 @@ void MainScene::Update(float eTime){
 		}
 	}
 }
+
 void MainScene::Render(){
 	ZeroIScene::Render();
 	Enemy->Render();

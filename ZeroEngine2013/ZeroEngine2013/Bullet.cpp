@@ -2,25 +2,12 @@
 #include "Bullet.h"
 
 
-Bullet::Bullet() : speed(std::rand() % 300 + 100),
-Sx(rand() % 1080), Sy(rand() % 720),
-dirX(0), dirY(0)
+Bullet::Bullet() : speed(std::rand() % 400 + 300),
+				   dirX(0), dirY(0)
 {
 	BulletSprite = new ZeroSprite("Resources/img/Bullet.png");
-	this->Pos().x = Sx;
-	this->Pos().y = Sy;
-
-	if (this->Pos().x > 1080 / 2)
-	{
-		dirX = -1;
-	}
-	else dirX = 1;
-
-	if (this->Pos().y > 720 / 2)
-	{
-		dirY = -1;
-	}
-	else dirY = 1;
+	std::cout << ScaledWidth() << std::endl;
+	std::cout << dirX << " " << dirY << std::endl;
 }
 
 
@@ -36,6 +23,7 @@ void Bullet::Update(float eTime)
 	this->AddPosX(speed * eTime * dirX);
 	SetObejct();
 	CheckCol();
+
 }
 
 void Bullet::Render()
@@ -50,8 +38,25 @@ void Bullet::SetObejct()
 }
 
 void Bullet::CheckCol(){
-	if (/*this->Pos().Distance(player->Pos()) < 30*/IsOverlapped(player))
+	if (this->BulletSprite->IsOverlapped(player->PlayerSprite))
 	{
 		player->isCol = true;
 	}
+}
+
+bool Bullet::CircleCol(ZeroIScene* _scene){
+	ZeroVec cpos1 = ZeroVec(m_fWidth * 0.5f, m_fHeight * 0.5f);
+	ZeroVec cpos2 = ZeroVec(_scene->Width() * 0.5f, _scene->Height() * 0.5f);
+
+	D3DXMATRIX mat1 = m_Mat;
+	D3DXMATRIX mat2 = _scene->Mat();
+
+	D3DXVec2TransformCoord(&cpos1, &cpos1, &mat1);
+	D3DXVec2TransformCoord(&cpos2, &cpos2, &mat2);
+
+	float len1 = ZeroVec(m_fScaledWidth, m_fScaledHeight).Length() * 0.5f;
+	float len2 = ZeroVec(_scene->ScaledWidth(), _scene->ScaledHeight()).Length() * 0.5f;
+	float len3 = cpos1.Distance(cpos2);
+
+	return (len3 <= len1 + len2);
 }

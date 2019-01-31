@@ -9,6 +9,7 @@ Player::Player() : velX(0), velY(0),
 	SetSprite();
 	this->SetPos(640, 360);
 	cout << Center.x << endl;
+	cout << this->Pos().x << endl;
 }
 
 
@@ -26,7 +27,7 @@ void Player::SetObject()
 {
 	for (auto iter = ResourceList.begin(); iter != ResourceList.end(); iter++)
 	{
-		(*iter)->SetPos(this->Pos());
+		(*iter)->SetPos(this->Pos().x - 16, this->Pos().y - 16);
 	}
 }
 
@@ -48,9 +49,14 @@ void Player::CheckDistance()
 void Player::Update(float eTime)
 {
 	ZeroIScene::Update(eTime);
-	CheckDistance();
 	Move(eTime);
+	CheckDistance();
 	SetObject();
+
+	if (isCol)
+	{
+		std::cout << "asd";
+	}
 }
 
 void Player::Move(float eTime)

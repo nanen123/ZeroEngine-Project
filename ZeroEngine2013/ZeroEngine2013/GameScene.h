@@ -6,15 +6,19 @@
 #include <list>
 #include "Player.h"
 #include "BulletManager.h"
+#include "MainScene.h"
+#include "ZeroSceneManager.h"
 
 class GameScene :
 	public ZeroIScene
 {
 public:
 	bool isRender;
-	Bullet *testBullet;
+	ZeroSprite* Stage;
+
 	GameScene();
 	~GameScene();
+
 	void Update(float eTime);
 	void Render();
 	

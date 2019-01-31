@@ -1,13 +1,18 @@
-﻿Build started 2019-01-25 오후 9:59:50.
+﻿Build started 2019-01-31 오후 5:18:34.
      1>Project "C:\Users\Life\Desktop\ZeroEngine\Zer0Engine\ZeroEngine2013\ZeroEngine2013\ZeroEngine2013.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include" /I.\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ZeroEngine2013.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Bullet.cpp
-         Bullet.cpp
-     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bullet.cpp(8): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bullet.cpp(10): warning C4244: '=' : conversion from 'int' to 'FLOAT', possible loss of data
-     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bullet.cpp(11): warning C4244: '=' : conversion from 'int' to 'FLOAT', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include" /I.\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ZeroEngine2013.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BulletManager.cpp
+         BulletManager.cpp
+     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bulletmanager.cpp(50): warning C4244: '=' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bulletmanager.cpp(51): warning C4244: '=' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bulletmanager.cpp(57): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bulletmanager.cpp(59): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bulletmanager.cpp(63): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\life\desktop\zeroengine\zer0engine\zeroengine2013\zeroengine2013\bulletmanager.cpp(65): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Life\Desktop\ZeroEngine\Zer0Engine\ZeroEngine2013\Debug\ZeroEngine2013.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86" /LIBPATH:.\lib ws2_32.lib fmod_vc.lib d3dx9.lib d3d9.lib winmm.lib dsound.lib comctl32.lib dxerr.lib "ZeroEngine-Debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Life\Desktop\ZeroEngine\Zer0Engine\ZeroEngine2013\Debug\ZeroEngine2013.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Life\Desktop\ZeroEngine\Zer0Engine\ZeroEngine2013\Debug\ZeroEngine2013.lib" /MACHINE:X86 Debug\Bullet.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Life\Desktop\ZeroEngine\Zer0Engine\ZeroEngine2013\Debug\ZeroEngine2013.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86" /LIBPATH:.\lib ws2_32.lib fmod_vc.lib d3dx9.lib d3d9.lib winmm.lib dsound.lib comctl32.lib dxerr.lib "ZeroEngine-Debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Life\Desktop\ZeroEngine\Zer0Engine\ZeroEngine2013\Debug\ZeroEngine2013.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Life\Desktop\ZeroEngine\Zer0Engine\ZeroEngine2013\Debug\ZeroEngine2013.lib" /MACHINE:X86 Debug\Bomb.obj
+         Debug\BombManager.obj
+         Debug\Bullet.obj
          Debug\BulletManager.obj
          Debug\GameScene.obj
          Debug\MainScene.obj
@@ -19,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.35
+Time Elapsed 00:00:00.79

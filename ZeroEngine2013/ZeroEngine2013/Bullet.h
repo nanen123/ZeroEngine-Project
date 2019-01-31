@@ -12,7 +12,8 @@ public:
 
 	float speed;
 	int Sx, Sy;
-	int dirX, dirY;
+	float dirX, dirY;
+
 
 	Bullet();
 	~Bullet();
@@ -22,4 +23,6 @@ public:
 
 	void SetObejct();
 	void CheckCol();
+
+	bool CircleCol(ZeroIScene* _scene);
 };
