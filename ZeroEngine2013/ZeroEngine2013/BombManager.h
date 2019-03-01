@@ -8,7 +8,8 @@ class BombManager :
 	public ZeroIScene
 {
 public:
-	float x, y; // 积己 谅钎
+	ZeroVec Center;
+	float Time;
 	std::list<Bomb*> bombList; // 气藕 府胶飘
 
 	BombManager();
@@ -18,6 +19,7 @@ public:
 	void Render();
 
 	void SpawnBomb();
+	void Destroy();
 
 	static BombManager* instance();
 };

@@ -2,7 +2,7 @@
 #include "BombManager.h"
 
 
-BombManager::BombManager()
+BombManager::BombManager() : Center(640, 360), Time(0)
 {
 
 }
@@ -15,11 +15,18 @@ BombManager::~BombManager()
 void BombManager::Update(float eTime)
 {
 	ZeroIScene::Update(eTime);
+	Time += eTime;
+	if (Time > 3)
+	{
+		SpawnBomb();
+		Time -= 3;
+	}
 
 	for (auto iter = bombList.begin(); iter != bombList.end(); iter++)
 	{
 		(*iter)->Update(eTime);
 	}
+	Destroy();
 }
 
 void BombManager::Render()
@@ -34,9 +41,29 @@ void BombManager::Render()
 
 void BombManager::SpawnBomb()
 {
-	Bomb* bomb = new Bomb();
-	bomb->AddPos(rand() % int(player->Pos().x + 30) - 30, rand() % int(player->Pos().y + 30) - 30);
+	Bomb *bomb = new Bomb();
+
+	while (true)
+	{
+		bomb->Pos().x = rand() % 1280; // 640
+		bomb->Pos().y = rand() % 720; // 360
+		if (bomb->Pos().Distance(Center) < 300) break;
+	}
+
 	bombList.push_back(bomb);
+}
+
+void BombManager::Destroy()
+{
+	for (auto iter = bombList.begin(); iter != bombList.end();)
+	{
+		if ((*iter)->Time > 1.5f)
+		{
+			delete *iter;
+			iter = bombList.erase(iter);
+		}
+		else iter++;
+	}
 }
 
 BombManager *BombManager::instance()
