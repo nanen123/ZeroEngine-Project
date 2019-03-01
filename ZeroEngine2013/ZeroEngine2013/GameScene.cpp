@@ -20,8 +20,10 @@ void GameScene::Update(float eTime)
 	BMGR->Update(eTime);
 	player->Update(eTime);
 	BombMGR->Update(eTime);
-	//if (player->isCol)
-		//ZeroSceneMgr->ChangeScene(new MainScene());
+	if (player->isCol){
+		ZeroSceneMgr->ChangeScene(new MainScene());
+		player->SetPlayer();
+	}
 }
 
 void GameScene::Render()

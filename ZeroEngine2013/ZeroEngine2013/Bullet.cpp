@@ -6,8 +6,6 @@ Bullet::Bullet() : speed(std::rand() % 400 + 300),
 				   dirX(0), dirY(0)
 {
 	BulletSprite = new ZeroSprite("Resources/img/Bullet.png");
-	std::cout << ScaledWidth() << std::endl;
-	std::cout << dirX << " " << dirY << std::endl;
 }
 
 

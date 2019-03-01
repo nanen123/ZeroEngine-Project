@@ -3,9 +3,12 @@
 #include "ZeroSprite.h"
 #include "ZeroInputManager.h"
 #include <list>
-#include<iostream>
+#include <iostream>
+#include "Util.h"
+
 using namespace std;
 #define player Player::instance()
+
 class Player :
 	public ZeroIScene
 {
@@ -32,5 +35,6 @@ public:
 
 	void Move(float eTime);
 	void CheckDistance();
+	void SetPlayer();
 };
 

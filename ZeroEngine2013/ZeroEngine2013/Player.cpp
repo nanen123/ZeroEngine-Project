@@ -2,16 +2,18 @@
 #include "Player.h"
 
 
-Player::Player() : velX(0), velY(0),
-				   Center(640, 360),
-				   isOut(false), isCol(false)
+Player::Player()
 {
+	SetPlayer();
 	SetSprite();
-	this->SetPos(640, 360);
-	cout << Center.x << endl;
-	cout << this->Pos().x << endl;
 }
 
+void Player::SetPlayer()
+{
+	this->SetPos(640, 360);
+	velX = 0; velY = 0;
+	isOut = false; isCol = false;
+}
 
 Player::~Player()
 {
@@ -27,18 +29,17 @@ void Player::SetObject()
 {
 	for (auto iter = ResourceList.begin(); iter != ResourceList.end(); iter++)
 	{
-		(*iter)->SetPos(this->Pos().x - 16, this->Pos().y - 16);
+		(*iter)->SetPos(this->Pos().x, this->Pos().y);
 	}
 }
 
 void Player::CheckDistance()
 {
-	if (Center.Distance(this->Pos()) > 300)
+	if (this->Pos().Distance(util->Center) > 300)
 	{
 		isOut = true;
 	}
 	else isOut = false;
-
 	if (isOut)
 	{
 		velX *= -2;
@@ -53,10 +54,6 @@ void Player::Update(float eTime)
 	CheckDistance();
 	SetObject();
 
-	if (isCol)
-	{
-		std::cout << "asd";
-	}
 }
 
 void Player::Move(float eTime)
