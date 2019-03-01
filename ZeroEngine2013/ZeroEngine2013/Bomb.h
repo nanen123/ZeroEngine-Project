@@ -1,6 +1,7 @@
 #pragma once
 #include "ZeroIScene.h"
 #include "Player.h"
+#include "ZeroAnimation.h"
 #include<iostream>
 
 class Bomb :
@@ -8,7 +9,7 @@ class Bomb :
 {
 public:
 	float Time; // Æø¹ß ½Ã°£
-
+	ZeroAnimation *anim;
 	ZeroSprite *bombsprite;
 
 	Bomb();
@@ -18,4 +19,5 @@ public:
 	void Render();
 
 	void SetObject();
+	void Destroy();
 };

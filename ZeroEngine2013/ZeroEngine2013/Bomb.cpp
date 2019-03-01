@@ -5,6 +5,7 @@
 Bomb::Bomb() : Time(0)
 {
 	bombsprite = new ZeroSprite("Resources/img/Bomb.png");
+	anim = new ZeroAnimation(20);
 }
 
 
@@ -16,12 +17,11 @@ Bomb::~Bomb()
 void Bomb::Update(float eTime)
 {
 	ZeroIScene::Update(eTime);
-
-	if (this->Pos().Distance(player->Pos()) < 32)
+	Time += eTime;
+	if (this->bombsprite->IsOverlapped(player->PlayerSprite))
 	{
 		player->isCol = true;
 	}
-
 	SetObject();
 }
 
@@ -34,4 +34,9 @@ void Bomb::Render()
 void Bomb::SetObject()
 {
 	bombsprite->SetPos(this->Pos());
+}
+
+void Bomb::Destroy()
+{
+	delete this;
 }
