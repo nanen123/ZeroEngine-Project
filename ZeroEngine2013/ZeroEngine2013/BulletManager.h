@@ -23,4 +23,5 @@ public:
 	void Render();
 
 	void SpawnBullet();
+	void Destroy();
 };
