@@ -11,8 +11,9 @@ public:
 	ZeroVec Center;
 	float Time;
 	std::list<Bomb*> bombList; // ÆøÅº ¸®½ºÆ®
+	Player* p;
 
-	BombManager();
+	BombManager(Player* p);
 	~BombManager();
 
 	void Update(float eTime);
@@ -21,6 +22,5 @@ public:
 	void SpawnBomb();
 	void Destroy();
 
-	static BombManager* instance();
 };
 

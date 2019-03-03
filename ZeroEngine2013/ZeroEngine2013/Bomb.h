@@ -11,6 +11,7 @@ public:
 	float Time; // Æø¹ß ½Ã°£
 	ZeroAnimation *anim;
 	ZeroSprite *bombsprite;
+	Player* p;
 
 	Bomb();
 	~Bomb();

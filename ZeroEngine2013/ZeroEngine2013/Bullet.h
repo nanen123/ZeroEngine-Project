@@ -9,6 +9,7 @@ class Bullet :
 {
 public:
 	ZeroSprite* BulletSprite;
+	Player* p;
 
 	float speed;
 	int Sx, Sy;

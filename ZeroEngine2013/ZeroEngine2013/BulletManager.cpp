@@ -2,19 +2,14 @@
 #include "BulletManager.h"
 
 
-BulletManager::BulletManager() : Time(0), Center(640, 360)
+BulletManager::BulletManager(Player* p) : Time(0), Center(640, 360)
 {
+	this->p = p;
 }
 
 
 BulletManager::~BulletManager()
 {
-}
-
-BulletManager* BulletManager::instance()
-{
-	static BulletManager bmgr;
-	return &bmgr;
 }
 
 void BulletManager::Update(float eTime)
@@ -44,7 +39,7 @@ void BulletManager::SpawnBullet()
 	if (Time >= 1)
 	{
 		Bullet* newB = new Bullet();
-
+		newB->p = p;
 		while (true)
 		{
 			newB->Pos().x = rand() % 1280; // 640

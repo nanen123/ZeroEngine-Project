@@ -2,9 +2,9 @@
 #include "BombManager.h"
 
 
-BombManager::BombManager() : Center(640, 360), Time(0)
+BombManager::BombManager(Player* p) : Center(640, 360), Time(0)
 {
-
+	this->p = p;
 }
 
 
@@ -42,7 +42,7 @@ void BombManager::Render()
 void BombManager::SpawnBomb()
 {
 	Bomb *bomb = new Bomb();
-
+	bomb->p = p;
 	while (true)
 	{
 		bomb->Pos().x = rand() % 1280; // 640
@@ -64,10 +64,4 @@ void BombManager::Destroy()
 		}
 		else iter++;
 	}
-}
-
-BombManager *BombManager::instance()
-{
-	static BombManager bmgr;
-	return &bmgr;
 }

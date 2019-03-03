@@ -18,9 +18,9 @@ void Bomb::Update(float eTime)
 {
 	ZeroIScene::Update(eTime);
 	Time += eTime;
-	if (this->bombsprite->IsOverlapped(player->PlayerSprite))
+	if (this->bombsprite->IsOverlapped(p->PlayerSprite))
 	{
-		player->isCol = true;
+		p->isCol = true;
 	}
 	SetObject();
 }

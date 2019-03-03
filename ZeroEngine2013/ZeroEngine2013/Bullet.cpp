@@ -36,9 +36,9 @@ void Bullet::SetObejct()
 }
 
 void Bullet::CheckCol(){
-	if (this->BulletSprite->IsOverlapped(player->PlayerSprite))
+	if (this->BulletSprite->IsOverlapped(p->PlayerSprite))
 	{
-		player->isCol = true;
+		p->isCol = true;
 	}
 }
 

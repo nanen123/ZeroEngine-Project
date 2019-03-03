@@ -5,16 +5,16 @@
 #include "Player.h"
 #include "BombManager.h"
 
-#define BMGR BulletManager::instance()
 
 class BulletManager :
 	public ZeroIScene
 {
 public:
 	float Time;
-	static BulletManager* instance();
+	Player* p;
+
 	ZeroVec Center;
-	BulletManager();
+	BulletManager(Player* p);
 	~BulletManager();
 
 	std::list<Bullet*> BulletList;
