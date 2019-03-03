@@ -8,6 +8,9 @@ GameScene::GameScene()
 	Stage->SetPos(340,60);
 	ZeroCameraMgr->SetCameraOn();
 	ZeroCameraMgr->SetScreen(1280, 720);
+	p = new Player();
+	bullet = new BulletManager(p);
+	Bomb = new BombManager(p);
 }
 
 GameScene::~GameScene()
@@ -17,12 +20,11 @@ GameScene::~GameScene()
 void GameScene::Update(float eTime)
 {
 	ZeroIScene::Update(eTime);
-	BMGR->Update(eTime);
-	player->Update(eTime);
-	BombMGR->Update(eTime);
-	if (player->isCol){
+	bullet->Update(eTime);
+	p->Update(eTime);
+	Bomb->Update(eTime);
+	if (p->isCol){
 		ZeroSceneMgr->ChangeScene(new MainScene());
-		player->SetPlayer();
 	}
 }
 
@@ -30,7 +32,7 @@ void GameScene::Render()
 {
 	ZeroIScene::Render();
 	Stage->Render();
-	BMGR->Render();
-	player->Render();
-	BombMGR->Render();
+	bullet->Render();
+	p->Render();
+	Bomb->Render();
 }

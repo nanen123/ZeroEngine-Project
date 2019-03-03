@@ -16,6 +16,10 @@ public:
 	bool isRender;
 	ZeroSprite* Stage;
 
+	Player* p;
+	BulletManager* bullet;
+	BombManager* Bomb;
+
 	GameScene();
 	~GameScene();
 
